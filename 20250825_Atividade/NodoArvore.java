@@ -8,5 +8,4 @@ public class NodoArvore<T> {
         this.filhoEsquerda = null;
         this.filhoDireita = null;
     }
-    
 }
