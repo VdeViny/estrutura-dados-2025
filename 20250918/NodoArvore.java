@@ -8,10 +8,4 @@ public class NodoArvore<T> {
         this.filhoEsquerda = null;
         this.filhoDireita = null;
     }
-
-    // @Override
-    // public String toString() {
-    //     return objeto.toString();
-    // }
-    
 }

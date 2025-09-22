@@ -4,18 +4,6 @@ public class Automovel implements Comparable<Automovel> {
     String modelo;
     String cor;
     String anoFabricacao;
-
-    @Override
-    public int compareTo(Automovel outro) {
-        String valorAtual = this.marca + '-' + this.modelo + '-' + this.anoFabricacao + '-' + this.numeroChassi;
-        String valorOutro = outro.marca + '-' + outro.modelo + '-' + outro.anoFabricacao + '-' + outro.numeroChassi;
-        // Retorna:
-        // -1 se esse é menor do que outro
-        // 1 se esse é maior do que outro
-        // 0 se são iguais
-        return valorAtual.compareTo(valorOutro);
-    }
-
     String anoModelo;
     String numeroChassi;
     String placa;
@@ -32,8 +20,14 @@ public class Automovel implements Comparable<Automovel> {
     }
 
     @Override
-    public String toString() {  
-        return "Automovel: " + this.marca + '-' + this.modelo + '-' + this.anoFabricacao + '-' + this.numeroChassi + "\n";
+    public int compareTo(Automovel outro) {
+        String valorAtual = this.marca + '-' + this.modelo + '-' + this.anoFabricacao + '-' + this.numeroChassi;
+        String valorOutro = outro.marca + '-' + outro.modelo + '-' + outro.anoFabricacao + '-' + outro.numeroChassi;
+        return valorAtual.compareTo(valorOutro);
     }
-    
+
+    @Override
+    public String toString() {
+        return "Automovel: " + this.marca + '-' + this.modelo + '-' + this.anoFabricacao + '-' + this.numeroChassi + " (Placa: " + this.placa + ")\n";
+    }
 }
