@@ -1,30 +1,33 @@
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class main {
     public static void main(String[] args) {
-        List<Automovel> automoveis = new ArrayList<>();
-        automoveis.add(new Automovel("Fiat", "Mobi", "Hatch", "CHASSI1", "2023", "2024", "Branco", "ABC1234"));
-        automoveis.add(new Automovel("VW", "Nivus", "SUV", "CHASSI2", "2023", "2023", "Cinza", "XYZ0123"));
-        automoveis.add(new Automovel("Chevrolet", "Onix", "Hatch", "CHASSI3", "2022", "2023", "Preto", "GHI7890"));
-        automoveis.add(new Automovel("Hyundai", "Creta", "SUV", "CHASSI4", "2024", "2024", "Prata", "DEF4567"));
-        automoveis.add(new Automovel("Toyota", "Corolla", "Sedan", "CHASSI5", "2023", "2024", "Branco", "JKL1122"));
+        
+        List<Agendamento> agendamentos = new ArrayList<>();
+        agendamentos.add(new Agendamento(1L, "Carlos Silva", "Dr. Roberto Alves", LocalDate.of(2025, 10, 22), LocalTime.of(14, 0), "Marcado"));
+        agendamentos.add(new Agendamento(2L, "Ana Pereira", "Dra. Mariana Lima", LocalDate.of(2025, 10, 22), LocalTime.of(10, 30), "Marcado"));
+        agendamentos.add(new Agendamento(3L, "Beatriz Costa", "Dr. Roberto Alves", LocalDate.of(2025, 10, 21), LocalTime.of(9, 0), "Marcado"));
+        agendamentos.add(new Agendamento(4L, "Carlos Silva", "Dra. Mariana Lima", LocalDate.of(2025, 11, 5), LocalTime.of(11, 0), "Marcado"));
+        agendamentos.add(new Agendamento(5L, "Ana Pereira", "Dr. Roberto Alves", LocalDate.of(2025, 10, 22), LocalTime.of(14, 30), "Marcado"));
 
-        ArvoreBinaria<Automovel> arvorePrincipal = new ArvoreBinaria<>();
+        ArvoreBinaria<Agendamento> arvoreAgendamentos = new ArvoreBinaria<>();
 
-        for (Automovel auto : automoveis) {
-            arvorePrincipal.inserir(auto);
+        for (Agendamento agendamento : agendamentos) {
+            arvoreAgendamentos.inserir(agendamento);
         }
 
         System.out.println("========================================================================");
-        System.out.println("### Árvore Principal (Ordenada por Marca-Modelo-Ano-Chassi) ###");
+        System.out.println("###         Árvore de Agendamentos (Ordenada por Data e Hora)        ###");
         System.out.println("========================================================================");
 
-        System.out.println("\n--- Impressão Em Ordem (mostra os elementos ordenados) ---");
-        arvorePrincipal.imprimeEmOrdem();
+        System.out.println("\n--- Impressão Em Ordem (mostra os agendamentos cronologicamente) ---");
+        arvoreAgendamentos.imprimeEmOrdem();
 
-        System.out.println("\n\n--- Impressão Pré-Fixado (mostra a estrutura da árvore) ---");
-        arvorePrincipal.imprimePreFixado();
+        System.out.println("\n\n\n--- Impressão Pré-Fixado (mostra a estrutura de inserção da árvore) ---");
+        arvoreAgendamentos.imprimePreFixado();
         System.out.println("\n");
     }
 }
